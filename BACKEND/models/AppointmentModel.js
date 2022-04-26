@@ -2,6 +2,7 @@
 const mongoose =  require ('mongoose');
 
 const Schema = mongoose.Schema;
+//querry
 
 const appointmentSchema = new Schema ({
     ID: {
