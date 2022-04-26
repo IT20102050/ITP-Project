@@ -1,0 +1,17 @@
+.ApopintMentTop{
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 600px; */
+}
+.calendar{
+   
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color:aliceblue;
+}
+
+.date{
+    font-size:medium;
+}
