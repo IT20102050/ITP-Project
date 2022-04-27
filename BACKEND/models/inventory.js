@@ -1,8 +1,7 @@
 const mongoose = require ('mongoose');
 const Schema = mongoose.Schema;
 
-//pahasara
-//ucbbcbie
+
 const inventorySchema = new Schema ({
     
   
@@ -26,7 +25,6 @@ const inventorySchema = new Schema ({
     type : Number,
     required : true
 
-    
     },
     brandName : {
         type : String,
