@@ -1,60 +1,39 @@
 const router = require("express").Router();
 const alert = require('alert');
 let Inventory = require("../models/inventory");
-const multer = require('multer');
-const path = require('path');
 
-
-
-//image upload
-const storage = multer.diskStorage ({
-    destination : (req, file, cb) => {
-        cb(null, 'Images');
-    },
-
-    filename : (req,file,cb) => {
-        cb(null, Date.now() + path.extname(file.originalname))
-    }
-    
-});
-
-const upload = multer({
-    storage:storage,
-    limits: {fileSize: '1000000'},
-    fileFilter: (req,file,cd) =>{
-        const fileTypes = /jpeg|jpg|png|gif/
-        const mimeType = fileTypes.test(file.mimetype)
-        const extname = fileTypes.test(path.extname(file.originalname))
-
-        if(mimeType && extname){
-            return cd(null,true)
-        }
-        cd ('Give proper files formate to upload')
-    }
-    
-}).single('image')
 
 
 //create
-router.route("/add").post((req,res) => {
+router.route("/add").post(async(req,res) => {
 
-    const iteamId = Number (req.body.iteamId);
+    
     const iteamName = req.body.iteamName;
     const price = req.body.price;
     const quantity = Number (req.body.quantity);
     const brandName = req.body.brandName;
-    const image = req.file.path;
 
     const newstore = new Inventory({
 
-        iteamId,
+    
         iteamName,
         price,
         quantity,
         brandName,
-        image
 
     })
+
+const totalNumberOfEmpInDb = await Inventory.countDocuments()
+// convert number to string, so we can concatenate 0s easily...
+let numberToString = totalNumberOfEmpInDb.toString()
+
+// If length of number string is less than 5 then add leading 0s in nuberToString
+if(numberToString.length < 5){
+    for (let i = numberToString.length; i < 5; i++){
+        numberToString = '0' + numberToString
+    }
+}
+newstore.iteamId = `ID${numberToString}`
 
 
 

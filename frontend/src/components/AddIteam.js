@@ -5,7 +5,7 @@ import axios from "axios";
 
 export default function AddIteam() {
 
-    const[iteamId, setiteamId] = useState("");
+    
     const[iteamName, setiteamname] = useState("");
     const[price, setprice] = useState("");
     const[quantity, setquantity] = useState("");
@@ -17,7 +17,7 @@ export default function AddIteam() {
        
         const newIteam ={
 
-        iteamId,
+        
         iteamName,
         price,
         quantity,
@@ -45,19 +45,6 @@ export default function AddIteam() {
  <form onSubmit={sendData}>
 
 
-
-
-<div class="from-group">
-
-    <label for="IteamId" class="form-label">Iteam code</label>
-    <input type="iteamId" class="form-control" id="iteamId" placeholder="Enter iteam_id"
-    onChange={(e)=>{
-
-        setiteamId(e.target.value);
-
-    }}
-     />
-</div>
 
   <div class="from-group">
     <label for="iteamName" class="form-label">Iteam Name</label>
