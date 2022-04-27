@@ -1,7 +1,7 @@
 const mongoose = require ('mongoose');
 const Schema = mongoose.Schema;
 
-
+//pahasara
 const inventorySchema = new Schema ({
     
   
