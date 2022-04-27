@@ -33,6 +33,12 @@ app.use("/inventory",InventoryRoutes);
 //static image folder
 app.use('/Images',express.static('./Images'))
 
+//appointment routes
+
+const appointmentRouter = require("./backend/routes/appointmentRoute.js");
+
+app.use("/appointment",appointmentRouter);
+
 app.listen(PORT, () => {
     console.log('Server is up and running on port number:' +PORT);
 })
