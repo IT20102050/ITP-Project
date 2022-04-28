@@ -113,8 +113,9 @@ return(
                         <th>Iteam code</th>
                         <th>Iteam Name</th>
                         <th>Price (Rs.)</th>
-                        <th>Quantity</th>
+                        <th>Quantity(kg/l/piece)</th>
                         <th>Brand Name</th>
+                        <th>Stock </th>
                         <th>Actions</th>
                     </tr>
                 </thead>
