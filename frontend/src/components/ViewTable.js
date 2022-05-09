@@ -6,6 +6,8 @@ const ViewTable = ({inventory , handleEditClick, handleDeleteClick}) => {
         <tr>
             <td>{inventory.iteamId}</td>
             <td>{inventory.iteamName}</td>
+            <td>{inventory.category}</td>
+            <td>{inventory.date}</td>
             <td>{inventory.price}</td>
             <td>{inventory.quantity}</td>
             <td>{inventory.brandName}</td>
@@ -13,7 +15,7 @@ const ViewTable = ({inventory , handleEditClick, handleDeleteClick}) => {
 
             {(() => {
 
-                    if (inventory.quantity <= 10) {
+                    if (inventory.quantity <= 25) {
 
                     return (
 
